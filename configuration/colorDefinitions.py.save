@@ -1,0 +1,8 @@
+# predefined colors
+white = (120,120,120)
+black = (0,0,0)
+red = (120,0,0)
+blue = (0,0,120)
+green = (0,120,0)
+yellow = ,255,0)
+cyan = (0,255,255)

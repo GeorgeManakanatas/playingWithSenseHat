@@ -1,5 +1,5 @@
-#from sense_hat import SenseHat
-from sense_emu import SenseHat
+from sense_hat import SenseHat
+#from sense_emu import SenseHat
 from configuration.ledImageArrays import black_screen
 from configuration.ledImageArrays import alarm_attention
 import time
