@@ -1,6 +1,6 @@
-import psutil
 from sense_hat import SenseHat
-
+#from sense_emu import SenseHat
+import psutil
 
 sense = SenseHat()
 
@@ -46,7 +46,6 @@ def get_disk_usage():
     return 'Disk: ' + str(disk.percent) + '% '
 
 def display_system_info(color,speed):
-
     # get readings
     memory = get_memory_usage()
     cpu = get_cpu_usage()
