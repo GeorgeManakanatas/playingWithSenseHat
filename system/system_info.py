@@ -1,4 +1,27 @@
 import psutil
+from sense_hat import SenseHat
+
+
+sense = SenseHat()
+
+def sense_orientation():
+    # get accelerations
+    acceleration = sense.get_accelerometer_raw()
+    # get rounded values
+    x=round(acceleration['x'], 0)
+    y=round(acceleration['y'], 0)
+    z=round(acceleration['z'], 0)
+    # detect orientation and apply proper rotation of matrix
+    if (x == 1):
+        sense.set_rotation(270)
+    elif (x == -1):
+        sense.set_rotation(90)
+    elif (y == 1):
+        sense.set_rotation(0)
+    elif (y == -1):
+        sense.set_rotation(180)
+    else:
+        sense.set_rotation(0)
 
 
 def get_memory_usage():
