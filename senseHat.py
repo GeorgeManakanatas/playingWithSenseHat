@@ -5,6 +5,7 @@ from sense_hat import SenseHat
 from configuration.colorDefinitions import green
 from configuration.colorDefinitions import cyan
 from configuration.colorDefinitions import red
+from configuration.colorDefinitions import white
 from configuration.ledImageArrays import alarm_attention
 from configuration.ledImageArrays import gr_flag
 from sensors import sensors
