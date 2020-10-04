@@ -1,7 +1,7 @@
 #!/usr/bin/python
 #
 from sense_hat import SenseHat
-#from sense_emu import SenseHat
+# from sense_emu import SenseHat
 from configuration.colorDefinitions import green
 from configuration.colorDefinitions import cyan
 from configuration.colorDefinitions import red
