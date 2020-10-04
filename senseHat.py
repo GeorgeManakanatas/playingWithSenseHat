@@ -8,13 +8,14 @@ from configuration.colorDefinitions import red
 from configuration.ledImageArrays import alarm_attention
 from configuration.ledImageArrays import gr_flag
 from sensors import sensors
+from system import system_info
 from time import sleep
 
 sense = SenseHat()
 
 ###########
 #
-# Configuration 
+# Configuration
 #
 ###########
 
@@ -22,14 +23,12 @@ sense = SenseHat()
 timeColor = green
 humidityColor = cyan
 tempColor = red
+infoColor = white
 speed = 0.1
 
-###########
-#                       
-#   Functions    
-#                      
-###########
-
+'''
+Functions
+'''
 def joystic_event(event):
     #print(event)
     if (event.action) == 'pressed':
@@ -42,14 +41,14 @@ def joystic_event(event):
             sensors.display_temp(tempColor,speed)
         elif (event.direction == 'down'):
             # up and down will trigger the temperature
-            sensors.display_temp(tempColor,speed)
+            system_info.display_system_info(infoColor,speed)
         elif (event.direction == 'right'):
             # left and right will trigger the humidity
             sensors.display_humidity(humidityColor,speed)
         elif (event.direction == 'left'):
             # left and right will trigger the humidity
             sensors.display_humidity(humidityColor,speed)
-        # just for some seperation        
+        # just for some seperation
         sleep(1)
     elif (event.action) == 'held':
         # something as a placeholder for held
@@ -60,12 +59,10 @@ def joystic_event(event):
     else:
         print('error, no action in event ?')
 
-#############
-#
-#   Main run loop
-#
-#############
 
+'''
+Main run loop
+'''
 while True:
     # orientation and motion detection
     sensors.sense_orientation()
@@ -78,4 +75,3 @@ while True:
 
 # Originally used for event detection, gave trouble when mixed with While True
 #sense.stick.direction_any = joystic_event
-        

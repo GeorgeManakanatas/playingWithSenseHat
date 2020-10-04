@@ -43,16 +43,16 @@ def display_time(color,speed,preference):
     # get local time
     hour = time.localtime().tm_hour
     minute = time.localtime().tm_min
-    
+
     # convert to non military time
     # not clear right now how to display in a practical fashion as message
-    
+
     # prepare minutes for display
     if ( minute < 10 ):
         minutes = "0"+str(minute)
     else:
         minutes = str(minute)
-    # prepare hours for display    
+    # prepare hours for display
     if ( hour < 10 ):
         hours = "0"+str(hour)
     else:
@@ -69,7 +69,7 @@ def display_temp(color,speed):
     displayMessage = str(int(temp))+"C"
     # display information
     sense.show_message(displayMessage, text_colour=color, scroll_speed=speed)
-    
+
 def display_humidity(color,speed):
     # get humidity reading
     humidity = sense.get_humidity()
